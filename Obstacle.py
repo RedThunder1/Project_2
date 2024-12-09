@@ -32,5 +32,6 @@ class Obstacle:
         self.screen.blit(self.upper_surface, (self.upper_rect.x, self.upper_rect.y))
         self.screen.blit(self.lower_surface, (self.lower_rect.x, self.lower_rect.y))
 
-    def get_rects(self):
-        return self.upper_rect, self.lower_rect
+    def check_collision(self, player_pos):
+        if self.upper_rect.collidepoint(player_pos) or self.lower_rect.collidepoint(player_pos):
+            return True
