@@ -2,7 +2,7 @@ import pygame
 import random
 
 class Obstacle:
-    def __init__(self, screen, scroll_speed):
+    def __init__(self, screen: pygame.display, scroll_speed: int):
         """
         Creates obstacle for player to avoid.
         :param screen: Screen to display obstacle on

@@ -1,7 +1,9 @@
+from typing import Callable
+
 import pygame
 
 class Button:
-    def __init__(self, screen, font, x, y, width, height, text, function):
+    def __init__(self, screen: pygame.display, font: pygame.font, x: int, y: int, width: int, height: int, text: str, function: Callable):
         """
         Creates clickable button in screen window.
         :param screen: Screen to display button on

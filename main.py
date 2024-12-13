@@ -22,7 +22,7 @@ with open('score.txt', 'a+') as file:
 pygame.time.set_timer(pygame.USEREVENT, 1000)
 player_pos = pygame.Vector2(50, 250)
 player_speed = 0
-gravity = 0.098
+gravity = 0.15
 jump_power = -3.5
 scroll_speed = 5
 
@@ -71,7 +71,8 @@ while running:
 
         screen.fill("red")
         screen.blit(font.render("Game Over", True, pygame.Color("black")), (screen.get_width()/2 - 90, 50))
-        screen.blit(font.render(f"High Score: {high_score}", True, pygame.Color("black")), (screen.get_width()/2 - 120, 450))
+        screen.blit(font.render(f"Score: {counter}", True, pygame.Color("black")),(screen.get_width() / 2 - 70, 410))
+        screen.blit(font.render(f"High Score: {high_score}", True, pygame.Color("black")), (screen.get_width()/2 - 110, 450))
         replay_button.process()
         exit_button.process()
 
@@ -101,6 +102,7 @@ while running:
     else:
         screen.fill("white")
         paused_button.process()
+        screen.blit(font.render(f"High Score: {high_score}", True, pygame.Color("black")), (screen.get_width()/2 - 110, 450))
 
     pygame.display.flip()
     clock.tick(60)
